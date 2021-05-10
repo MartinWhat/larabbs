@@ -4,8 +4,8 @@
     <a class="navbar-brand " href="{{ url('/') }}">
       LaraBBS
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedConte
- <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
@@ -19,9 +19,11 @@
           <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
         @else
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="" class="img-responsive img-circle" width="30px" height="30px">
-            {{ Auth::user()->name }}
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              <img src="https://q1.qlogo.cn/g?b=qq&nk=467045478&s=100" class="img-responsive img-circle" width="30px"
+                   height="30px">
+              {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="">个人中心</a>
