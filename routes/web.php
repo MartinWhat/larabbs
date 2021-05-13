@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 
 Route::get('/', [PagesController::class, 'root'])->name('root');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Auth::routes();
 
@@ -42,7 +44,10 @@ Route::get('email/verify', [VerificationController::class, 'show'])->name('verif
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 Route::post('email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 
+//用户页面
+Route::resource('users', UsersController::class, ['only' => ['show', 'update', 'edit']]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 
 
