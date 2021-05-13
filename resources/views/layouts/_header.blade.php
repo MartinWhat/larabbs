@@ -21,7 +21,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
-              <img src="https://q1.qlogo.cn/g?b=qq&nk=467045478&s=100" class="img-responsive img-circle" width="30px"
+              <img src="{{ $user->avatar }}" class="img-responsive img-circle" width="30px"
                    height="30px">
               {{ Auth::user()->name }}
             </a>
