@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,9 @@ use App\Http\Controllers\Auth\LoginController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
+php artisan make:scaffold Topic --schema="title:string:index,body:text,user_id:integer:unsigned:index,
+php artisan make:scaffold Topic --schema="title:string:index,body:text,user_id:integer:unsigned:index,category_id:integer:unsigned,reply_count:integer:unsigned.default(0),view_count:integer:unsigned;default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:default(0),excerpt:text,slug:string:nullable"
 */
 
 
@@ -47,7 +51,4 @@ Route::post('email/resend', [VerificationController::class, 'resend'])->name('ve
 //用户页面
 Route::resource('users', UsersController::class, ['only' => ['show', 'update', 'edit']]);
 
-
-
-
-
+Route::resource('topics', TopicsController::class, ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
