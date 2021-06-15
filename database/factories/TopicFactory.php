@@ -12,7 +12,6 @@ class TopicFactory extends Factory
     public function definition()
     {
         $sentence = $this->faker->sentence();
-        // 随机取一个月以内的时间
         return [
             // $this->faker->name,
             'title' => $sentence,
