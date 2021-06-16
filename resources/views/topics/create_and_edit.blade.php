@@ -57,6 +57,7 @@
     </div>
   </div>
 </div>
+
 @section('styles')
   <link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
 @stop
@@ -83,6 +84,5 @@
     });
   </script>
 @stop
-
 
 @endsection
