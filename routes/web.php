@@ -6,9 +6,10 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\RepliesController;
 use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -58,4 +59,4 @@ Route::resource('categories', CategoriesController::class, ['only' => ['show']])
 Route::post('upload_image', [TopicsController::class,'uploadImage'])->name('topics.upload_image');
 Route::get('topics/{topic}/{slug?}',[TopicsController::class,'show'])->name('topics.show');
 
-Route::resource('replies', 'RepliesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('replies', RepliesController::class, ['only' => ['store', 'destroy']]);
