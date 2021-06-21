@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\RepliesController;
 use App\Http\Controllers\TopicsController;
@@ -60,3 +61,5 @@ Route::post('upload_image', [TopicsController::class,'uploadImage'])->name('topi
 Route::get('topics/{topic}/{slug?}',[TopicsController::class,'show'])->name('topics.show');
 
 Route::resource('replies', RepliesController::class, ['only' => ['store', 'destroy']]);
+
+Route::resource('notifications', NotificationsController::class,['only' => ['index']]);
